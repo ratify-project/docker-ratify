@@ -7,6 +7,7 @@ import (
 	"os"
 	"os/exec"
 
+	"github.com/deislabs/ratify/pkg/verifier"
 	"github.com/spf13/cobra"
 	"oras.land/oras-go/v2/registry/remote"
 )
@@ -64,10 +65,6 @@ func resolveDigest(ctx context.Context, image string) (string, error) {
 	return ref.String(), nil
 }
 
-type verifierReport struct {
-	IsSuccess bool `json:"isSuccess"`
-}
-
 func runRatifyVerify(ctx context.Context, config, ref string) error {
 	cmd := exec.CommandContext(ctx, "ratify", "verify", "-c", config, "-s", ref)
 	cmd.Stderr = os.Stderr
@@ -75,13 +72,16 @@ func runRatifyVerify(ctx context.Context, config, ref string) error {
 	if err != nil {
 		return err
 	}
-	var report verifierReport
+	var report verifier.VerifierResult
 	if err := json.Unmarshal(result, &report); err != nil {
 		return err
 	}
 	if !report.IsSuccess {
 		os.Stdout.Write(result)
 		return fmt.Errorf("ratify verification failed")
+	}
+	if len(report.NestedResults) == 0 {
+		return fmt.Errorf("no ratifications found")
 	}
 	return nil
 }
