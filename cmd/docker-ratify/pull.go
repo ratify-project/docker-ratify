@@ -7,7 +7,7 @@ import (
 	"os"
 	"os/exec"
 
-	"github.com/deislabs/ratify/pkg/verifier"
+	"github.com/deislabs/ratify/pkg/executor/types"
 	"github.com/spf13/cobra"
 	"oras.land/oras-go/v2/registry/remote"
 )
@@ -72,7 +72,7 @@ func runRatifyVerify(ctx context.Context, config, ref string) error {
 	if err != nil {
 		return err
 	}
-	var report verifier.VerifierResult
+	var report types.VerifyResult
 	if err := json.Unmarshal(result, &report); err != nil {
 		return err
 	}
@@ -80,7 +80,7 @@ func runRatifyVerify(ctx context.Context, config, ref string) error {
 		os.Stdout.Write(result)
 		return fmt.Errorf("ratify verification failed")
 	}
-	if len(report.NestedResults) == 0 {
+	if len(report.VerifierReports) == 0 {
 		return fmt.Errorf("no ratifications found")
 	}
 	return nil
