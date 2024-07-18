@@ -4,16 +4,16 @@ import (
 	"encoding/json"
 	"os"
 
-	"github.com/shizhMSFT/docker-ratify/internal/docker"
+	"github.com/ratify-project/docker-ratify/internal/docker"
 	"github.com/spf13/cobra"
 )
 
 var pluginMetadata = docker.PluginMetadata{
 	SchemaVersion:    "0.1.0",
-	Vendor:           "Shiwei Zhang",
+	Vendor:           "Ratify Project",
 	Version:          "0.1.0",
 	ShortDescription: "Artifact Ratification Framework",
-	URL:              "https://github.com/shizhMSFT/docker-ratify",
+	URL:              "https://github.com/ratify-project/docker-ratify",
 	Experimental:     true,
 }
 
