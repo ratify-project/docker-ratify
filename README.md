@@ -16,7 +16,7 @@ curl -L https://github.com/ratify-project/ratify/releases/download/v1.2.0/ratify
 Run the following command to install on Linux:
 ```bash
 mkdir -p ~/.docker/cli-plugins
-curl -L https://github.com/shizhMSFT/docker-ratify/releases/download/v0.1.0/docker-ratify_0.1.0_linux_amd64.tar.gz | tar xvzC ~/.docker/cli-plugins/ docker-ratify
+curl -L https://github.com/ratify-project/docker-ratify/releases/download/v0.1.0/docker-ratify_0.1.0_linux_amd64.tar.gz | tar xvzC ~/.docker/cli-plugins/ docker-ratify
 ```
 
 Help information can be reviewed by
@@ -98,13 +98,13 @@ Now, we can pull an image with ratification:
 $ docker ratify pull -c config.json mcr.microsoft.com/oss/deislabs/ratify-base:v1.2.0
 INFO[0000] Setting log level to info
 INFO[0000] selected default auth provider: dockerConfig
-INFO[0000] defaultPluginPath set to /home/shizh/.ratify/plugins
+INFO[0000] defaultPluginPath set to /home/demo/.ratify/plugins
 INFO[0000] selected policy provider: regopolicy
 INFO[0001] Resolve of the image completed successfully the digest is sha256:80dd14af4a7a676c962d0ca0f6e3b11a77b77826532fc863ea626317b158559c  component-type=executor go.version=go1.21.10
 INFO[0002] Trust policy configuration: &{Name:default RegistryScopes:[*] SignatureVerification:{VerificationLevel:strict Override:map[]} TrustStores:[ca:certs] TrustedIdentities:[*]}  component-type=verifier go.version=go1.21.10
 INFO[0002] 1 notation verification certificates loaded from path './root.crt'
-WARN[0002] Invalid path '/home/shizh/.ratify/ratify-certs/notation/truststore' skipped, error lstat /home/shizh/.ratify/ratify-certs/notation/truststore: no such file or directory
-INFO[0002] 0 notation verification certificates loaded from path '/home/shizh/.ratify/ratify-certs/notation/truststore'
+WARN[0002] Invalid path '/home/demo/.ratify/ratify-certs/notation/truststore' skipped, error lstat /home/demo/.ratify/ratify-certs/notation/truststore: no such file or directory
+INFO[0002] 0 notation verification certificates loaded from path '/home/demo/.ratify/ratify-certs/notation/truststore'
 INFO[0002] Resolve of the image completed successfully the digest is sha256:ac86395350279f460c6bc08eb7875583c7365c423ebf9a7ac5a7a0f86f87924e  component-type=executor go.version=go1.21.10
 INFO[0002] Resolve of the image completed successfully the digest is sha256:664dbce8187af59ee9a156b10f1ae66c0ab74b2d356bcce6ae3bfbffc90ddcf2  component-type=executor go.version=go1.21.10
 INFO[0002] Resolve of the image completed successfully the digest is sha256:f281be7185446aa5bd346b3ee859061c95199830cfd42ce289cda2994205076f  component-type=executor go.version=go1.21.10
@@ -112,12 +112,12 @@ INFO[0002] Resolve of the image completed successfully the digest is sha256:6557
 INFO[0002] Resolve of the image completed successfully the digest is sha256:d93c4208945899f65c50f03024892a6f106344a0759eb1168e43d497d1582e40  component-type=executor go.version=go1.21.10
 INFO[0002] Trust policy configuration: &{Name:default RegistryScopes:[*] SignatureVerification:{VerificationLevel:strict Override:map[]} TrustStores:[ca:certs] TrustedIdentities:[*]}  component-type=verifier go.version=go1.21.10
 INFO[0002] 1 notation verification certificates loaded from path './root.crt'
-WARN[0002] Invalid path '/home/shizh/.ratify/ratify-certs/notation/truststore' skipped, error lstat /home/shizh/.ratify/ratify-certs/notation/truststore: no such file or directory
-INFO[0002] 0 notation verification certificates loaded from path '/home/shizh/.ratify/ratify-certs/notation/truststore'
+WARN[0002] Invalid path '/home/demo/.ratify/ratify-certs/notation/truststore' skipped, error lstat /home/demo/.ratify/ratify-certs/notation/truststore: no such file or directory
+INFO[0002] 0 notation verification certificates loaded from path '/home/demo/.ratify/ratify-certs/notation/truststore'
 INFO[0002] Trust policy configuration: &{Name:default RegistryScopes:[*] SignatureVerification:{VerificationLevel:strict Override:map[]} TrustStores:[ca:certs] TrustedIdentities:[*]}  component-type=verifier go.version=go1.21.10
 INFO[0002] 1 notation verification certificates loaded from path './root.crt'
-WARN[0002] Invalid path '/home/shizh/.ratify/ratify-certs/notation/truststore' skipped, error lstat /home/shizh/.ratify/ratify-certs/notation/truststore: no such file or directory
-INFO[0002] 0 notation verification certificates loaded from path '/home/shizh/.ratify/ratify-certs/notation/truststore'
+WARN[0002] Invalid path '/home/demo/.ratify/ratify-certs/notation/truststore' skipped, error lstat /home/demo/.ratify/ratify-certs/notation/truststore: no such file or directory
+INFO[0002] 0 notation verification certificates loaded from path '/home/demo/.ratify/ratify-certs/notation/truststore'
 INFO[0002] Resolve of the image completed successfully the digest is sha256:9a330411e967bde20bd41702fa6cdb32ab27183f53cd3a17af3ebac41d3112b2  component-type=executor go.version=go1.21.10
 mcr.microsoft.com/oss/deislabs/ratify-base@sha256:80dd14af4a7a676c962d0ca0f6e3b11a77b77826532fc863ea626317b158559c: Pulling from oss/deislabs/ratify-base
 b2ce0e066077: Pull complete
@@ -145,7 +145,7 @@ Pulling an image without signatures will fail:
 $ docker ratify pull -c config.json mcr.microsoft.com/mcr/hello-world:latest
 INFO[0000] Setting log level to info
 INFO[0000] selected default auth provider: dockerConfig
-INFO[0000] defaultPluginPath set to /home/shizh/.ratify/plugins
+INFO[0000] defaultPluginPath set to /home/demo/.ratify/plugins
 INFO[0000] selected policy provider: regopolicy
 INFO[0000] Resolve of the image completed successfully the digest is sha256:92c7f9c92844bbbb5d0a101b22f7c2a7949e40f8ea90c8b3bc396879d95e899a  component-type=executor go.version=go1.21.10
 Error: no ratifications found
