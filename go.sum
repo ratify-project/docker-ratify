@@ -3,8 +3,8 @@ github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSs
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc h1:U9qPSI2PIWSS1VwoXQT9A3Wy9MM3WgvqSxFWenqJduM=
 github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
-github.com/deislabs/ratify v1.2.1 h1:4cNiT7VG/4C6HSOLI5wVNxEDQnFNoRhsPL0g90jA9i8=
-github.com/deislabs/ratify v1.2.1/go.mod h1:bJXlv/cToNhDFRgmQZggJpJ3RNJK3hVgSfvHV7F7Hns=
+github.com/deislabs/ratify v1.2.2 h1:di5iafm3Iq96uY4AHMWCRsscrpdRXihIcnzv9LtAC2Y=
+github.com/deislabs/ratify v1.2.2/go.mod h1:b1/X0WheBUOFluzxbLjCcC0EGnMWISjg4dC0mgfw/6k=
 github.com/inconshreveable/mousetrap v1.1.0 h1:wN+x4NVGpMsO7ErUn/mUI3vEoE6Jt13X2s0bqwp9tc8=
 github.com/inconshreveable/mousetrap v1.1.0/go.mod h1:vpF70FUmC8bwa3OWnCshd2FqLfsEA9PFc4w1p2J65bw=
 github.com/opencontainers/go-digest v1.0.0 h1:apOUWs51W5PlhuyGyz9FCeeBIOUDA/6nW8Oi/yOhh5U=
