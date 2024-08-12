@@ -3,7 +3,7 @@ module github.com/ratify-project/docker-ratify
 go 1.22.0
 
 require (
-	github.com/deislabs/ratify v1.2.1
+	github.com/deislabs/ratify v1.2.2
 	github.com/spf13/cobra v1.8.1
 	oras.land/oras-go/v2 v2.5.0
 )
